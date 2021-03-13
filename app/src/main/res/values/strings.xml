@@ -3,4 +3,5 @@
     <string name="hintValorConta">Valor da conta</string>
     <string name="hintValorGorjeta">Valor da gorjeta</string>
     <string name="hintValorTotal">Valor total</string>
+    <string name="valorPorcentagem">Valor da porcentagem</string>
 </resources>

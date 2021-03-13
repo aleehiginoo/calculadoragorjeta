@@ -15,11 +15,13 @@ public class MainActivity extends AppCompatActivity {
 
     // objetos formatadores de moeda:
     private static final NumberFormat currencyFormat =  NumberFormat.getCurrencyInstance();
+    private static final NumberFormat percentFormat = NumberFormat.getPercentInstance();
 
     private double vlrConta = 0.0; // valor da conta inserida pelo usuario
     private double percent = 15; // porcentagem inicial da gorjeta
     private TextView valorContaTextView; // mostra o valor da conta
     private TextView valorGorjetaTextView; // mostra o valor da gorjeta
+    private TextView valorPorcentagemTextView; // mostra o valor da porcentagem
     private TextView valorTotalTextView; // mostra o valor total da conta calculada
 
     @Override
@@ -31,10 +33,12 @@ public class MainActivity extends AppCompatActivity {
         valorContaTextView = (TextView)findViewById(R.id.valorConta);
         valorTotalTextView = (TextView)findViewById(R.id.valorTotal);
         valorGorjetaTextView = (TextView)findViewById(R.id.valorGorjeta);
+        valorPorcentagemTextView = (TextView)findViewById(R.id.valorPorcentagem);
 
         // zerando exibições na tela
         valorTotalTextView.setText(currencyFormat.format(0));
         valorGorjetaTextView.setText(currencyFormat.format(0));
+        valorPorcentagemTextView.setText(percentFormat.format(percent / 100));
 
         // configura o receptor TextWatcher de valorContaTextView
         EditText valorContaEditText = (EditText) findViewById(R.id.valorConta);
@@ -71,6 +75,7 @@ public class MainActivity extends AppCompatActivity {
             double total = vlrConta + gorjeta;
             valorTotalTextView.setText(currencyFormat.format(total));
             valorGorjetaTextView.setText(currencyFormat.format(gorjeta));
+            valorPorcentagemTextView.setText(percentFormat.format(percent));
         } catch (Exception ex){
             String y = ex.getMessage();
         }

@@ -36,4 +36,12 @@
         android:ems="10"
         android:hint="@string/hintValorTotal"
         android:inputType="number" />
+
+    <EditText
+        android:id="@+id/valorPorcentagem"
+        android:layout_width="match_parent"
+        android:layout_height="92dp"
+        android:ems="10"
+        android:inputType="number" />
+
 </LinearLayout>
